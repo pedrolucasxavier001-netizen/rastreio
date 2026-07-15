@@ -1,5 +1,5 @@
 const STORAGE_KEY = 'encomendas';
-const PIN_KEY = 'admin-pin';
+const PIN_KEY = 'admin-';
 let encomendas = [];
 let openId = null;
 let adminPin = null;
