@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rastreador de Encomendas — São Paulo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="hairline-road"></div>
+    <header>
+      <div>
+        <h1>Rastreador de encomendas</h1>
+        <p class="subtitle">Acompanhe sua entrega em poucos cliques</p>
+      </div>
+      <button class="mode-toggle" id="btn-mode-toggle">🔒 Área administrativa</button>
+    </header>
+
+    <div id="client-view">
+      <div class="hero">
+        <div class="badge">🚚 Rastreamento ponta a ponta</div>
+        <h2>Sua encomenda, <span>rota por rota</span></h2>
+        <p>Acompanhe cada etapa da viagem em tempo real, do momento da coleta até a porta da sua casa.</p>
+      </div>
+
+      <div class="route-strip">
+        <div class="cities"><b>📍 Coleta</b><span>Rodovia acompanhada</span><b>Seu destino 🏁</b></div>
+        <div class="road-track">
+          <span class="truck-marker">🚚</span>
+        </div>
+      </div>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <div class="ic">🔍</div>
+          <div class="t">Rastreamento por código</div>
+          <div class="d">Basta o código enviado na compra</div>
+        </div>
+        <div class="trust-item">
+          <div class="ic">📦</div>
+          <div class="t">Rota detalhada</div>
+          <div class="d">Cada etapa do trajeto, com datas</div>
+        </div>
+        <div class="trust-item">
+          <div class="ic">✅</div>
+          <div class="t">Atualizado todo dia</div>
+          <div class="d">Status sempre em dia até a entrega</div>
+        </div>
+      </div>
+
+      <div class="search-panel">
+        <h2>Rastrear encomenda</h2>
+        <p>Digite o código que você recebeu para acompanhar a rota.</p>
+        <div class="search-bar">
+          <input id="search-code" type="text" placeholder="Ex: BR1234-SPMG-567">
+          <button class="primary" id="btn-search">Rastrear</button>
+        </div>
+        <div class="search-msg" id="search-msg">Código não encontrado. Confira e tente novamente.</div>
+      </div>
+      <div class="result-card" id="result-card"></div>
+
+      <div class="steps-row">
+        <div class="step">
+          <div class="num">1</div>
+          <div class="t">Receba o código</div>
+          <div class="d">Enviado assim que sua encomenda é coletada em São Paulo.</div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div class="t">Digite acima</div>
+          <div class="d">Cole ou digite o código exatamente como recebido.</div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div class="t">Acompanhe a rota</div>
+          <div class="d">Veja o status atual e a linha do tempo completa.</div>
+        </div>
+      </div>
+
+      <div class="section-title">O que dizem nossos clientes</div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          Consegui ver exatamente em qual etapa minha encomenda estava, sem precisar ligar pra ninguém.
+          <div class="author">— Mariana T.</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          Chegou no prazo certinho e a linha do tempo foi bem clara sobre cada etapa da rota.
+          <div class="author">— Carlos E.</div>
+        </div>
+      </div>
+
+      <div class="section-title">Precisa de ajuda?</div>
+      <div class="support-strip">
+        <div class="support-card">
+          <div class="t">💬 Fale conosco</div>
+          <div class="d">Atendimento pelo WhatsApp de segunda a sábado, das 8h às 19h.</div>
+        </div>
+        <div class="support-card">
+          <div class="t">📄 Nota fiscal</div>
+          <div class="d">O código de rastreio também consta na nota fiscal da sua compra.</div>
+        </div>
+      </div>
+
+      <div class="section-title">Perguntas frequentes</div>
+      <div id="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span>Não encontrei meu código, o que faço?</span><span class="chev">▾</span></div>
+          <div class="faq-a"><div class="faq-a-inner">Confira o e-mail ou a nota fiscal da compra. Se o código continuar não aparecendo, entre em contato com o suporte.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Com que frequência o status é atualizado?</span><span class="chev">▾</span></div>
+          <div class="faq-a"><div class="faq-a-inner">O status avança automaticamente a cada dia, conforme a encomenda percorre as etapas da rota até a entrega.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>Posso alterar o endereço de entrega?</span><span class="chev">▾</span></div>
+          <div class="faq-a"><div class="faq-a-inner">Alterações de endereço precisam ser feitas diretamente com o suporte antes da saída para entrega.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span>O que acontece se eu não estiver em casa?</span><span class="chev">▾</span></div>
+          <div class="faq-a"><div class="faq-a-inner">O entregador tenta novamente no dia seguinte. Após tentativas sem sucesso, a encomenda fica disponível para retirada.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="admin-view" class="hidden">
+      <div class="admin-bar">
+        <div class="admin-label">Painel administrativo</div>
+        <button class="primary" id="btn-new">+ Nova encomenda</button>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num" id="stat-total">0</div><div class="stat-label">Total</div></div>
+        <div class="stat transit"><div class="stat-num" id="stat-transit">0</div><div class="stat-label">Em trânsito</div></div>
+        <div class="stat delivered"><div class="stat-num" id="stat-delivered">0</div><div class="stat-label">Entregues</div></div>
+      </div>
+
+      <div class="panel hidden" id="form-panel">
+        <h2>Nova encomenda</h2>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-destino">Cidade de destino</label>
+            <input id="f-destino" type="text" placeholder="Itabira, MG" value="Itabira, MG">
+          </div>
+          <div class="field">
+            <label for="f-dias">Prazo (dias)</label>
+            <input id="f-dias" type="number" min="1" max="15" value="4">
+          </div>
+          <div class="field">
+            <label for="f-data">Data de postagem</label>
+            <input id="f-data" type="date">
+          </div>
+          <div class="field">
+            <label for="f-codigo">Código de rastreio</label>
+            <input id="f-codigo" type="text" placeholder="gerado automaticamente">
+          </div>
+          <div class="field">
+            <label for="f-remetente">Remetente</label>
+            <input id="f-remetente" type="text" placeholder="Nome de quem envia">
+          </div>
+          <div class="field">
+            <label for="f-destinatario">Destinatário</label>
+            <input id="f-destinatario" type="text" placeholder="Nome de quem recebe">
+          </div>
+          <div class="field">
+            <label for="f-telefone">Telefone do destinatário</label>
+            <input id="f-telefone" type="tel" placeholder="(31) 90000-0000">
+          </div>
+          <div class="field">
+            <label for="f-servico">Tipo de serviço</label>
+            <select id="f-servico">
+              <option>Padrão</option>
+              <option>Expresso</option>
+              <option>Econômico</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-transportadora">Transportadora</label>
+            <input id="f-transportadora" type="text" placeholder="Rota Direta Transportes" value="Rota Direta Transportes">
+          </div>
+          <div class="field">
+            <label for="f-peso">Peso (kg)</label>
+            <input id="f-peso" type="number" min="0" step="0.1" placeholder="1.5">
+          </div>
+          <div class="field">
+            <label for="f-valor">Valor declarado (R$)</label>
+            <input id="f-valor" type="number" min="0" step="0.01" placeholder="0,00">
+          </div>
+          <div class="field">
+            <label for="f-endereco">Endereço de entrega</label>
+            <input id="f-endereco" type="text" placeholder="Rua, número, bairro">
+          </div>
+          <div class="field full">
+            <label for="f-obs">Observações</label>
+            <textarea id="f-obs" placeholder="Frágil, entregar em horário comercial, etc."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="primary" id="btn-save">Salvar encomenda</button>
+          <button class="ghost" id="btn-cancel">Cancelar</button>
+        </div>
+      </div>
+
+      <div id="list"></div>
+      <div class="empty" id="empty-state" style="display:none;">
+        <div class="big">Nenhuma encomenda ainda</div>
+        <div>Clique em "Nova encomenda" para começar a rastrear.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="pin-overlay">
+    <div class="pin-box">
+      <h3 id="pin-title">Definir PIN de acesso</h3>
+      <p id="pin-desc">Crie um PIN para proteger o painel administrativo. Só quem souber o PIN vê os totais e cadastra novas encomendas.</p>
+      <input id="pin-input" type="password" inputmode="numeric" maxlength="6" placeholder="••••">
+      <div class="pin-error" id="pin-error">PIN incorreto. Tente novamente.</div>
+      <div class="pin-actions">
+        <button class="primary" id="pin-confirm" style="flex:1;">Confirmar</button>
+        <button class="ghost" id="pin-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
